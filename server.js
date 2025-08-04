@@ -31,10 +31,10 @@ const Song = mongoose.model('Song', songSchema);
 
 // Upload Route
 app.post('/upload', async (req, res) => {
-  const { title, artist, cover, url, duration, genre, language } = req.body;
+const { title, artist, cover, url, public_id, duration, genre, language } = req.body;
 
   try {
-    const song = new Song({ title, artist, cover, url, duration, genre, language });
+const song = new Song({ title, artist, cover, url, public_id, duration, genre, language });
     await song.save();
     res.status(200).json({ message: '✅ Song uploaded successfully!' });
   } catch (error) {
