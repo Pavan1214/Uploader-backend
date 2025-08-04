@@ -20,10 +20,12 @@ const songSchema = new mongoose.Schema({
   artist: String,
   cover: String,
   url: String,
+  public_id: String, 
   duration: String,
   genre: String,
   language: String,
 });
+
 
 const Song = mongoose.model('Song', songSchema); 
 
